@@ -1,0 +1,60 @@
+/* Grundläggande reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Serif', sans-serif;
+}
+
+/* Färger */
+:root {
+    --primary-color: #800020;
+    /* Vinröd */
+    --secondary-color: #C0C0C0;
+    /* Silver */
+    --text-color: #ffffff;
+    --background-color: #1a1a1a;
+}
+
+/* Body och generell stil */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navbar */
+nav {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
