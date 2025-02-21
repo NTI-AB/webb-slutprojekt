@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royale fine dining</title>
-    <link rel="stylesheet" href="../css/index.css">
-</head>
+    <title>Royale Fine Dining</title>
+    <link rel="stylesheet" href="../css/index.css"> 
 
 <body>
     <header>
         <nav>
             <div class="logo">Royale</div>
-            <ul>
+            <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul id="nav-menu">
                 <li><a href="#hours">Hours & Location</a></li>
                 <li><a href="#menus">Menus</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" class="modal-trigger">About</a></li>
                 <li><a href="#restaurant">Restaurant</a></li>
-                <li><a href="#wine-bar">Wine Bar</a></li>
-                <li><a href="#bakery">Bakery</a></li>
+                <li><a href="#wine-bar" class="modal-trigger">Wine Bar</a></li>
+                <li><a href="#bakery" class="modal-trigger">Bakery</a></li>
                 <li><a href="#private-dining">Private Dining</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#reservations" class="btn">Reservations</a></li>
@@ -27,11 +27,32 @@
     </header>
 
     <main>
-        <section id="gallery">
-            <h1>Welcome to Our Restaurant</h1>
-            <p>Enjoy a fine dining experience with us.</p>
+        <section class="slideshow-container">
+            <div class="slide active">
+                <img src="../img/interior.jpg" alt="Restaurant Interior">
+            </div>
+            <div class="slide">
+                <img src="../img/hamburger.jpg" alt="Fine Dining Dish">
+            </div>
+            <div class="slide">
+                <img src="../img/wine-cellar.jpg" alt="Wine Selection">
+            </div>
+            <div class="slide">
+                <img src="../img/bakery.jpg" alt="Bakery Items">
+            </div>
+            <div class="slide">
+                <img src="../img/steak.jpg" alt="Steak and Potatoes">
+            </div>
         </section>
     </main>
+
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-text"></div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Royale. All rights reserved.</p>

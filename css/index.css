@@ -1,25 +1,25 @@
-/* Grundläggande reset */
+/* Reset & Variables */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Serif', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
-/* Färger */
 :root {
     --primary-color: #800020;
-    /* Vinröd */
+    /* Burgundy */
     --secondary-color: #E0E0E0;
     /* Silver */
     --text-color: #ffffff;
     --background-color: #1a1a1a;
 }
 
-/* Body och generell stil */
+/* Body & General */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
 }
 
 /* Navbar */
@@ -29,6 +29,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
 nav ul {
@@ -50,6 +56,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Mobile Menu Toggle */
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -57,4 +73,88 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 50px;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--background-color);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        /* Adjust based on header height */
+        left: 0;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
