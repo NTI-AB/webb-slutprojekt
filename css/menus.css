@@ -1,0 +1,240 @@
+/* Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+    /* Elegant serif font */
+}
+
+:root {
+    --primary-color: #800020;
+    /* Burgundy */
+    --secondary-color: #E0E0E0;
+    /* Silver */
+    --text-color: #ffffff;
+    --background-color: #1a1a1a;
+    --background-image: url('../img/paper-background.jpg');
+    /* Paper-like background */
+}
+
+/* Body & General */
+body {
+    background: var(--background-color) var(--background-image);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-family: 'Lora', serif;
+    /* Body font */
+}
+
+/* Navbar */
+nav {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: 'Playfair Display', serif;
+    /* Consistent font */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Lora', serif;
+    /* Consistent font */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Menu Toggle */
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-family: 'Lora', serif;
+    /* Consistent font */
+}
+
+/* Menu Specific Styles */
+.menu-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    /* Dark semi-transparent background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow */
+    backdrop-filter: blur(2px);
+    /* Subtle texture effect */
+}
+
+.menu-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.menu-btn {
+    background: none;
+    /* No background by default */
+    color: var(--secondary-color);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-family: 'Lora', serif;
+    /* Consistent font */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.menu-btn.active {
+    background: var(--primary-color);
+    /* Red background for active button */
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.menu-btn:hover {
+    opacity: 0.8;
+    /* Subtle hover effect */
+}
+
+.menu-content {
+    display: none;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark semi-transparent background */
+    border-radius: 8px;
+    color: var(--secondary-color);
+    /* Ensure text visibility */
+    font-family: 'Lora', serif;
+    /* Consistent font */
+}
+
+.menu-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Menu Item Styles */
+.menu-item {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    /* Elegant font for titles */
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Lora', serif;
+    /* Consistent font */
+}
+
+.item-description {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 70ch;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        /* Adjust based on header height */
+        left: 0;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-container {
+        padding: 1rem;
+    }
+
+    .menu-buttons {
+        flex-direction: column;
+    }
+
+    .menu-btn {
+        width: 100%;
+    }
+}
