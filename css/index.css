@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif; /* Updated to match menus.css */
 }
 
 :root {
@@ -20,6 +20,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    font-family: 'Lora', serif; /* Added body font to match menus.css */
 }
 
 /* Navbar */
@@ -35,6 +36,7 @@ nav .logo {
     font-size: 24px;
     font-weight: bold;
     color: var(--secondary-color);
+    font-family: 'Playfair Display', serif; /* Added consistent font */
 }
 
 nav ul {
@@ -50,6 +52,7 @@ nav ul li a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
+    font-family: 'Lora', serif; /* Added consistent font */
 }
 
 nav ul li a:hover {
@@ -73,6 +76,7 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 50px;
+    font-family: 'Lora', serif; /* Added consistent font */
 }
 
 /* Slideshow */
@@ -122,6 +126,12 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
+    font-family: 'Lora', serif; /* Added consistent font */
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif; /* Added heading font */
+    margin-bottom: 1rem;
 }
 
 .close {

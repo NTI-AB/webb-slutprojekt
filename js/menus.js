@@ -19,11 +19,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mobile Menu Toggle
     const navToggle = document.getElementById("nav-toggle");
     const navMenu = document.getElementById("nav-menu");
+    const body = document.body;
+    
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", () => {
             navMenu.classList.toggle("active");
             navToggle.setAttribute("aria-expanded", 
                 navMenu.classList.contains("active"));
+                
+            // Prevent the mobile menu from affecting other elements
+            if (navMenu.classList.contains("active")) {
+                body.classList.add("mobile-menu-open");
+            } else {
+                body.classList.remove("mobile-menu-open");
+            }
         });
     }
 });

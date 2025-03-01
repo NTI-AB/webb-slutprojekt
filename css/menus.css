@@ -3,19 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
-    /* Elegant serif font */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
 }
 
 :root {
-    --primary-color: #800020;
-    /* Burgundy */
-    --secondary-color: #E0E0E0;
-    /* Silver */
-    --text-color: #ffffff;
+    --primary-color: #800020; /* Burgundy */
+    --secondary-color: #E0E0E0; /* Silver */
+    --text-color: #4a0011; /* Darker wine red for better visibility on paper background */
     --background-color: #1a1a1a;
-    --background-image: url('../img/paper-background.jpg');
-    /* Paper-like background */
+    --background-image: url('../img/paper-background.jpg'); /* Paper-like background */
 }
 
 /* Body & General */
@@ -23,8 +19,12 @@ body {
     background: var(--background-color) var(--background-image);
     color: var(--text-color);
     line-height: 1.6;
-    font-family: 'Lora', serif;
-    /* Body font */
+    font-family: 'Lora', serif; /* Body font */
+}
+
+/* When mobile menu is open */
+body.mobile-menu-open {
+    overflow: hidden; /* Prevent scrolling when menu is open */
 }
 
 /* Navbar */
@@ -40,8 +40,7 @@ nav .logo {
     font-size: 24px;
     font-weight: bold;
     color: var(--secondary-color);
-    font-family: 'Playfair Display', serif;
-    /* Consistent font */
+    font-family: 'Playfair Display', serif; /* Consistent font */
 }
 
 nav ul {
@@ -57,8 +56,7 @@ nav ul li a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Lora', serif;
-    /* Consistent font */
+    font-family: 'Lora', serif; /* Consistent font */
 }
 
 nav ul li a:hover {
@@ -75,6 +73,11 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Mobile menu adjustments */
+#nav-menu {
+    z-index: 100; /* Ensure menu is above other elements */
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -82,8 +85,7 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 50px;
-    font-family: 'Lora', serif;
-    /* Consistent font */
+    font-family: 'Lora', serif; /* Consistent font */
 }
 
 /* Menu Specific Styles */
@@ -91,13 +93,10 @@ footer {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.7);
-    /* Dark semi-transparent background */
+    background: transparent; /* Changed to transparent to remove background */
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    /* Stronger shadow */
-    backdrop-filter: blur(2px);
-    /* Subtle texture effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    /* Removed backdrop-filter to fix blurring issue */
 }
 
 .menu-buttons {
@@ -105,68 +104,59 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 50; /* Below the nav menu but above other elements */
 }
 
 .menu-btn {
-    background: none;
-    /* No background by default */
-    color: var(--secondary-color);
+    background: none; /* No background by default */
+    color: var(--text-color); /* Using the darker text color */
     border: none;
     padding: 1rem 2rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s;
-    font-family: 'Lora', serif;
-    /* Consistent font */
+    font-family: 'Lora', serif; /* Consistent font */
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
 }
 
 .menu-btn.active {
-    background: var(--primary-color);
-    /* Red background for active button */
-    color: var(--text-color);
+    background: var(--primary-color); /* Red background for active button */
+    color: var(--secondary-color); /* Silver color for contrast */
     font-weight: bold;
 }
 
 .menu-btn:hover {
-    opacity: 0.8;
-    /* Subtle hover effect */
+    opacity: 0.8; /* Subtle hover effect */
 }
 
 .menu-content {
     display: none;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    /* Dark semi-transparent background */
+    background: transparent; /* Changed to transparent to remove gray background */
     border-radius: 8px;
-    color: var(--secondary-color);
-    /* Ensure text visibility */
-    font-family: 'Lora', serif;
-    /* Consistent font */
+    color: var(--text-color); /* Using darker text color */
+    font-family: 'Lora', serif; /* Consistent font */
+    opacity: 1; /* Set to 1 to avoid any opacity issues */
 }
 
 .menu-content.active {
     display: block;
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.3s; /* Faster animation */
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 1; } /* Start at full opacity */
+    to { opacity: 1; } /* End at full opacity */
 }
 
 /* Menu Item Styles */
 .menu-item {
     margin: 2rem 0;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(74, 0, 17, 0.2); /* Darker, more subtle border */
 }
 
 .item-header {
@@ -181,22 +171,20 @@ footer {
     letter-spacing: 1px;
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
-    /* Elegant font for titles */
+    font-family: 'Playfair Display', serif; /* Elegant font for titles */
 }
 
 .item-price {
     font-weight: bold;
     font-size: 1.2rem;
-    font-family: 'Lora', serif;
-    /* Consistent font */
+    font-family: 'Lora', serif; /* Consistent font */
 }
 
 .item-description {
     font-family: 'Lora', serif;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color); /* Using the darker wine red */
     max-width: 70ch;
 }
 
@@ -212,9 +200,9 @@ footer {
         width: 100%;
         background-color: var(--primary-color);
         position: absolute;
-        top: 60px;
-        /* Adjust based on header height */
+        top: 60px; /* Adjust based on header height */
         left: 0;
+        z-index: 1000; /* Ensure it's above everything */
     }
 
     #nav-menu.active {
