@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royale - Information & Reservations</title>
+    <link rel="stylesheet" href="../css/info.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Royale</div>
+            <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul id="nav-menu">
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="#hours" class="active">Hours & Location</a></li>
+                <li><a href="../html/menus.html">Menus</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="../html/index.html#restaurant">Restaurant</a></li>
+                <li><a href="../html/index.html#wine-bar">Wine Bar</a></li>
+                <li><a href="../html/index.html#bakery">Bakery</a></li>
+                <li><a href="../html/index.html#private-dining">Private Dining</a></li>
+                <li><a href="../html/index.html#gallery">Gallery</a></li>
+                <li><a href="#reservations" class="btn">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section navigation -->
+        <div class="section-nav">
+            <button class="section-btn active" data-section="hours">Hours & Location</button>
+            <button class="section-btn" data-section="about">About</button>
+            <button class="section-btn" data-section="reservations">Reservations</button>
+        </div>
+
+        <!-- Hours & Location Section -->
+        <section id="hours" class="content-section active">
+            <div class="container">
+                <h1>Hours & Location</h1>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Hours of Operation</h2>
+                        <div class="hours-grid">
+                            <div class="time-block">
+                                <h3>Dining Room</h3>
+                                <p>Breakfast: 7:00 AM - 11:00 AM, Daily</p>
+                                <p>Lunch: 11:30 AM - 2:30 PM, Daily</p>
+                                <p>Dinner: 5:30 PM - 10:00 PM, Sunday - Thursday</p>
+                                <p>Dinner: 5:30 PM - 11:00 PM, Friday - Saturday</p>
+                            </div>
+                            
+                            <div class="time-block">
+                                <h3>Wine Bar</h3>
+                                <p>4:00 PM - 12:00 AM, Daily</p>
+                                <p>Happy Hour: 4:00 PM - 6:00 PM, Monday - Friday</p>
+                            </div>
+                            
+                            <div class="time-block">
+                                <h3>Bakery</h3>
+                                <p>6:30 AM - 3:00 PM, Daily</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Our Location</h2>
+                        <address>
+                            123 Gourmet Avenue<br>
+                            San Francisco, CA 94105<br>
+                            <a href="tel:+14155551234">(415) 555-1234</a><br>
+                            <a href="mailto:info@royalerestaurant.com">info@royalerestaurant.com</a>
+                        </address>
+                        
+                        <div class="map-container">
+                            <!-- Placeholder for map -->
+                            <div class="map-placeholder">
+                                <p>Interactive Map</p>
+                                <p>Map data would appear here</p>
+                            </div>
+                        </div>
+                        
+                        <div class="transportation">
+                            <h3>Getting Here</h3>
+                            <div class="transport-options">
+                                <div class="transport-option">
+                                    <h4>Parking</h4>
+                                    <p>Valet parking available for $15. Street parking and public lots also available within walking distance.</p>
+                                </div>
+                                
+                                <div class="transport-option">
+                                    <h4>Public Transportation</h4>
+                                    <p>Located 2 blocks from Montgomery BART/Muni Station. Bus lines 2, 7, and 21 stop within one block.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <h1>About Royale</h1>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Our Story</h2>
+                        <p>Founded in 2015 by acclaimed Chef Marie Laurent, Royale brings the refined elegance of classic European dining to San Francisco with a distinctly Californian approach. What began as an intimate wine bar has evolved into a culinary destination, expanding to include our award-winning restaurant, artisanal bakery, and private dining experiences.</p>
+                        
+                        <p>Our philosophy is simple: exceptional ingredients, prepared with precision and care, served in an atmosphere of understated luxury. We believe dining is an art form that engages all the senses, and we strive to create memorable experiences that honor both tradition and innovation.</p>
+                        
+                        <div class="featured-image">
+                            <div class="image-placeholder">
+                                <p>Image: Chef Marie Laurent in the kitchen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Our Team</h2>
+                        
+                        <div class="team-member">
+                            <h3>Chef Marie Laurent</h3>
+                            <p class="title">Executive Chef & Owner</p>
+                            <p>With three Michelin stars to her name and a background that includes training under culinary luminaries in Paris and New York, Chef Laurent brings her distinctive vision and technical mastery to every dish at Royale.</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <h3>Thomas Chen</h3>
+                            <p class="title">Chef de Cuisine</p>
+                            <p>A native of San Francisco with extensive experience in both French and Japanese kitchens, Chef Chen's innovative approach to flavor and technique perfectly complements Chef Laurent's vision.</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <h3>Sophia Rodriguez</h3>
+                            <p class="title">Master Sommelier</p>
+                            <p>One of only 172 Master Sommeliers in the world, Sophia's expertly curated wine program has earned Royale the Wine Spectator Grand Award for three consecutive years.</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <h3>Jerome Petit</h3>
+                            <p class="title">Head Baker</p>
+                            <p>Trained in the classic French tradition, Jerome's artisanal breads and pastries have developed a cult following in San Francisco and are featured on the tables of many of the city's finest restaurants.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Sustainability</h2>
+                        <p>At Royale, our commitment to sustainability is woven into every aspect of our operation. We partner exclusively with local farms that employ regenerative agricultural practices, source seafood only from certified sustainable fisheries, and maintain a zero-waste policy in our kitchens.</p>
+                        
+                        <p>Our rooftop garden supplies many of our herbs and specialty vegetables, and we compost all organic waste to return nutrients to the soil. Even our dining room is furnished with reclaimed materials and powered by renewable energy.</p>
+                        
+                        <p>We believe that true luxury dining includes taking responsibility for our impact on the planet and community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservations Section -->
+        <section id="reservations" class="content-section">
+            <div class="container">
+                <h1>Make a Reservation</h1>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Reserve Your Table</h2>
+                        <p>For the best dining experience, we recommend making a reservation. Please note that online reservations can be made up to 60 days in advance.</p>
+                        
+                        <form id="reservation-form" class="reservation-form">
+                            <div class="form-group">
+                                <label for="party-size">Party Size</label>
+                                <select id="party-size" name="party-size" required>
+                                    <option value="" disabled selected>Select party size</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6 people</option>
+                                    <option value="7-8">7-8 people</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reservation-date">Date</label>
+                                <input type="date" id="reservation-date" name="reservation-date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reservation-time">Time</label>
+                                <select id="reservation-time" name="reservation-time" required>
+                                    <option value="" disabled selected>Select time</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="special-requests">Special Requests (Optional)</label>
+                                <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                                <p class="form-hint">Please note that special requests cannot be guaranteed but we will do our best to accommodate.</p>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Reserve Now</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Reservation Policies</h2>
+                        <ul class="policy-list">
+                            <li>Reservations require a credit card to hold but you will not be charged unless you cancel less than 24 hours in advance or fail to show up.</li>
+                            <li>Late cancellations and no-shows will be charged $50 per person.</li>
+                            <li>For parties of 7 or more, please call us directly at (415) 555-1234.</li>
+                            <li>We hold reservations for 15 minutes past the reservation time. If you're running late, please call us.</li>
+                            <li>For same-day reservations, please call us directly.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-content">
+                        <h2>Private Dining</h2>
+                        <p>For private events and large group reservations, please see our <a href="../html/index.html#private-dining">Private Dining</a> page or contact our events team at <a href="mailto:events@royalerestaurant.com">events@royalerestaurant.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Royale. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/info.js"></script>
+</body>
+
+</html>
