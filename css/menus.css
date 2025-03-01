@@ -1,162 +1,79 @@
-/* Reset & Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
-}
+/* Menu Specific Styles - Optimized to remove redundancy with global.css */
 
-:root {
-    --primary-color: #800020; /* Burgundy */
-    --secondary-color: #E0E0E0; /* Silver */
-    --text-color: #4a0011; /* Darker wine red for better visibility on paper background */
-    --background-color: #1a1a1a;
-    --background-image: url('../img/paper-background.jpg'); /* Paper-like background */
-}
-
-/* Body & General */
+/* Page-specific background styling */
 body {
     background: var(--background-color) var(--background-image);
-    color: var(--text-color);
-    line-height: 1.6;
-    font-family: 'Lora', serif; /* Body font */
 }
 
-/* When mobile menu is open */
-body.mobile-menu-open {
-    overflow: hidden; /* Prevent scrolling when menu is open */
-}
-
-/* Navbar */
-nav {
-    background-color: var(--primary-color);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--secondary-color);
-    font-family: 'Playfair Display', serif; /* Consistent font */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Lora', serif; /* Consistent font */
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile Menu Toggle */
-#nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--secondary-color);
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Mobile menu adjustments */
-#nav-menu {
-    z-index: 100; /* Ensure menu is above other elements */
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
-    font-family: 'Lora', serif; /* Consistent font */
-}
-
-/* Menu Specific Styles */
+/* Menu Container & Layout */
 .menu-container {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background: transparent; /* Changed to transparent to remove background */
+    background: transparent;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    /* Removed backdrop-filter to fix blurring issue */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Menu Navigation Buttons */
 .menu-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
     position: relative;
-    z-index: 50; /* Below the nav menu but above other elements */
+    z-index: 50;
 }
 
 .menu-btn {
-    background: none; /* No background by default */
-    color: var(--text-color); /* Using the darker text color */
+    background: none;
+    color: var(--text-color);
     border: none;
     padding: 1rem 2rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s;
-    font-family: 'Lora', serif; /* Consistent font */
+    font-family: 'Lora', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
 }
 
 .menu-btn.active {
-    background: var(--primary-color); /* Red background for active button */
-    color: var(--secondary-color); /* Silver color for contrast */
+    background: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
 .menu-btn:hover {
-    opacity: 0.8; /* Subtle hover effect */
+    opacity: 0.8;
 }
 
+/* Menu Content Display */
 .menu-content {
     display: none;
     padding: 2rem;
-    background: transparent; /* Changed to transparent to remove gray background */
+    background: transparent;
     border-radius: 8px;
-    color: var(--text-color); /* Using darker text color */
-    font-family: 'Lora', serif; /* Consistent font */
-    opacity: 1; /* Set to 1 to avoid any opacity issues */
+    color: var(--text-color);
+    opacity: 1;
 }
 
 .menu-content.active {
     display: block;
-    animation: fadeIn 0.3s; /* Faster animation */
+    animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 1; } /* Start at full opacity */
-    to { opacity: 1; } /* End at full opacity */
+    from { opacity: 1; }
+    to { opacity: 1; }
 }
 
-/* Menu Item Styles */
+/* Menu Item Styling */
 .menu-item {
     margin: 2rem 0;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(74, 0, 17, 0.2); /* Darker, more subtle border */
+    border-bottom: 1px solid var(--border-color);
 }
 
 .item-header {
@@ -171,49 +88,22 @@ footer {
     letter-spacing: 1px;
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Playfair Display', serif; /* Elegant font for titles */
+    font-family: 'Playfair Display', serif;
 }
 
 .item-price {
     font-weight: bold;
     font-size: 1.2rem;
-    font-family: 'Lora', serif; /* Consistent font */
 }
 
 .item-description {
-    font-family: 'Lora', serif;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--text-color); /* Using the darker wine red */
     max-width: 70ch;
 }
 
-/* Mobile Styles */
+/* Menu-specific mobile adjustments */
 @media (max-width: 768px) {
-    #nav-toggle {
-        display: block;
-    }
-
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        z-index: 1000; /* Ensure it's above everything */
-    }
-
-    #nav-menu.active {
-        display: flex;
-    }
-
-    #nav-menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
     .menu-container {
         padding: 1rem;
     }

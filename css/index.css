@@ -1,83 +1,4 @@
-/* Reset & Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif; /* Updated to match menus.css */
-}
-
-:root {
-    --primary-color: #800020;
-    /* Burgundy */
-    --secondary-color: #E0E0E0;
-    /* Silver */
-    --text-color: #ffffff;
-    --background-color: #1a1a1a;
-}
-
-/* Body & General */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    font-family: 'Lora', serif; /* Added body font to match menus.css */
-}
-
-/* Navbar */
-nav {
-    background-color: var(--primary-color);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--secondary-color);
-    font-family: 'Playfair Display', serif; /* Added consistent font */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Lora', serif; /* Added consistent font */
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile Menu Toggle */
-#nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--secondary-color);
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
-    font-family: 'Lora', serif; /* Added consistent font */
-}
+/* Index-specific styles */
 
 /* Slideshow */
 .slideshow-container {
@@ -126,11 +47,11 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    font-family: 'Lora', serif; /* Added consistent font */
+    font-family: 'Lora', serif;
 }
 
 .modal-content h2 {
-    font-family: 'Playfair Display', serif; /* Added heading font */
+    font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
 }
 
@@ -142,29 +63,3 @@ footer {
     cursor: pointer;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    #nav-toggle {
-        display: block;
-    }
-
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 60px;
-        /* Adjust based on header height */
-        left: 0;
-    }
-
-    #nav-menu.active {
-        display: flex;
-    }
-
-    #nav-menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
-}
