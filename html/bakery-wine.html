@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royale - Bakery & Wine Bar</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/bakery-wine.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Royale</div>
+            <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul id="nav-menu">
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/info.html#hours">Hours & Location</a></li>
+                <li><a href="../html/menus.html">Menus</a></li>
+                <li><a href="../html/info.html#about">About</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="../html/bakery-wine.html" class="active">Wine Bar & Bakery</a></li>
+                <li><a href="#private-dining">Private Dining</a></li>
+                <li><a href="../html/info.html#reservations" class="btn">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Slideshow similar to index page -->
+        <section class="slideshow-container">
+            <div class="slide active">
+                <img src="../img/wine-cellar.jpg" alt="Wine Cellar">
+            </div>
+            <div class="slide">
+                <img src="../img/baker.jpg" alt="Bakery Items">
+            </div>
+            <div class="slide">
+                <img src="../img/wine-tasting.jpg" alt="Wine Tasting">
+            </div>
+            <div class="slide">
+                <img src="../img/pastries.jpg" alt="Fresh Pastries">
+            </div>
+        </section>
+
+        <!-- Section navigation buttons styled like info.html -->
+        <div class="section-nav">
+            <button class="section-btn active" data-section="wine-bar">Wine Bar</button>
+            <button class="section-btn" data-section="bakery">Bakery</button>
+        </div>
+
+        <div class="container">
+            <!-- Wine Bar Section -->
+            <section id="wine-bar" class="content-section active">
+                <div class="section-content">
+                    <h2>The Wine Bar</h2>
+                    <p class="tagline">An exquisite collection curated by our Master Sommelier</p>
+                    <div class="description">
+                        <p>Our intimate wine bar features a carefully curated selection of over 200 wines from renowned
+                            regions around the world. From rare vintage champagnes to exceptional local discoveries, our
+                            collection offers something for both connoisseurs and casual enthusiasts.</p>
+                        <p>Join us for wine flights, expert-led tastings, or simply unwind with a perfectly paired glass
+                            and small plate. Our knowledgeable sommeliers are always available to guide you through our
+                            extensive cellar and help discover new favorites.</p>
+                    </div>
+                    <div class="details">
+                        <div class="detail-item">
+                            <h3>Hours</h3>
+                            <p>Tuesday - Thursday: 4:00 PM - 11:00 PM</p>
+                            <p>Friday - Saturday: 3:00 PM - 1:00 AM</p>
+                            <p>Sunday: 3:00 PM - 10:00 PM</p>
+                            <p>Monday: Closed</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>Weekly Events</h3>
+                            <p>Wine Wednesday: Half-price flights</p>
+                            <p>Thursday Tastings: Regional spotlight</p>
+                            <p>Weekend Sommelier Selection</p>
+                        </div>
+                    </div>
+                    <a href="../html/menus.html#wine" class="view-menu-btn" id="view-wine-list">View Wine List</a>
+                </div>
+
+                <!-- Testimonials Section for Wine -->
+                <div class="testimonials">
+                    <h2>What Our Wine Enthusiasts Say</h2>
+                    <div class="testimonial-container">
+                        <div class="testimonial">
+                            <p>"The wine selection is impeccable. Their sommelier introduced me to a Spanish tempranillo
+                                that changed my perception of red wines entirely."</p>
+                            <p class="author">— Wine Enthusiast Magazine</p>
+                        </div>
+                        <div class="testimonial">
+                            <p>"The wine flight paired with their artisanal cheese board creates a symphony of flavors
+                                that must be experienced. A perfect evening destination."</p>
+                            <p class="author">— Local Food Critic</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bakery Section -->
+            <section id="bakery" class="content-section">
+                <div class="section-content">
+                    <h2>The Bakery</h2>
+                    <p class="tagline">Artisanal pastries and breads crafted daily</p>
+                    <div class="description">
+                        <p>Our in-house bakery creates exceptional artisanal breads and pastries using traditional
+                            methods and the finest ingredients. Led by renowned pastry chef Marie Laurent, our team
+                            begins work before dawn to ensure everything is fresh for your morning visit.</p>
+                        <p>From flaky croissants and pain au chocolat to rustic sourdough loaves and seasonal fruit
+                            tarts, each item is crafted with meticulous attention to detail. Pair your selection with
+                            our specialty coffee or take home a box of treats to enjoy later.</p>
+                    </div>
+                    <div class="details">
+                        <div class="detail-item">
+                            <h3>Hours</h3>
+                            <p>Tuesday - Friday: 7:00 AM - 3:00 PM</p>
+                            <p>Saturday - Sunday: 7:00 AM - 4:00 PM</p>
+                            <p>Monday: Closed</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>Daily Specials</h3>
+                            <p>Tuesday: Brioche & Challah</p>
+                            <p>Wednesday: Rustic Country Loaves</p>
+                            <p>Thursday: Specialty Croissants</p>
+                            <p>Friday: Artisan Focaccia</p>
+                            <p>Weekend: Chef's Selection & Specialty Cakes</p>
+                        </div>
+                    </div>
+                    <div class="bakery-note">
+                        <p>Pre-orders welcome for special occasions. Please allow 48 hours notice for custom cakes and
+                            large orders.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonials Section for Bakery -->
+                <div class="testimonials">
+                    <h2>What Our Bakery Guests Say</h2>
+                    <div class="testimonial-container">
+                        <div class="testimonial">
+                            <p>"Royale's bakery produces the most authentic French pastries I've had outside of Paris.
+                                Their croissants have that perfect butter-layered texture that's so hard to find."</p>
+                            <p class="author">— Culinary Institute Review</p>
+                        </div>
+                        <div class="testimonial">
+                            <p>"The sourdough bread has that perfect crust and chewy interior. I drive 30 minutes every
+                                Saturday morning just to get a fresh loaf."</p>
+                            <p class="author">— Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Royale. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/bakery-wine.js"></script>
+</body>
+
+</html>
