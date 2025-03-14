@@ -21,6 +21,10 @@ body {
     line-height: 1.6;
 }
 
+body {
+    background: var(--background-color) var(--background-image);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;

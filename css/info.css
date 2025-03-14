@@ -1,8 +1,5 @@
 
-/* Page-specific background */
-body {
-    background: var(--background-color) var(--background-image);
-}
+
 
 /* Section Navigation */
 .section-nav {

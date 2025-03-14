@@ -1,10 +1,5 @@
 /* Menu Specific Styles - Optimized to remove redundancy with global.css */
 
-/* Page-specific background styling */
-body {
-    background: var(--background-color) var(--background-image);
-}
-
 /* Menu Container & Layout */
 .menu-container {
     padding: 2rem;
@@ -23,6 +18,8 @@ body {
     margin-bottom: 2rem;
     position: relative;
     z-index: 50;
+    justify-content: center;
+    /* Added to center the buttons horizontally */
 }
 
 .menu-btn {
@@ -31,12 +28,19 @@ body {
     border: none;
     padding: 1rem 2rem;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 0;
+    /* Remove border radius for straight lines */
     transition: all 0.3s;
     font-family: 'Lora', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+    border-top: 1px solid var(--primary-color);
+    /* Add top border */
+    border-bottom: 1px solid var(--primary-color);
+    /* Add bottom border */
+    margin: 0 0.5rem;
+    /* Add some horizontal spacing between buttons */
 }
 
 .menu-btn.active {
@@ -46,7 +50,10 @@ body {
 }
 
 .menu-btn:hover {
-    opacity: 0.8;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    opacity: 1;
+    /* Override the existing opacity */
 }
 
 /* Menu Content Display */
@@ -65,8 +72,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 1; }
-    to { opacity: 1; }
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Menu Item Styling */
@@ -114,5 +126,7 @@ body {
 
     .menu-btn {
         width: 100%;
+        margin: 0.25rem 0;
+        /* Adjust margin for mobile */
     }
 }

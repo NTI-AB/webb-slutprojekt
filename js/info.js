@@ -3,6 +3,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const sectionButtons = document.querySelectorAll(".section-btn");
     const contentSections = document.querySelectorAll(".content-section");
 
+    // Function to update nav active state
+    function updateNavActiveState(sectionId) {
+        // Remove active class from all nav links
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add active class to the corresponding nav link
+        const correspondingLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
+        if (correspondingLink) {
+            correspondingLink.classList.add('active');
+        }
+    }
+
     sectionButtons.forEach(button => {
         button.addEventListener("click", function() {
             // Remove active class from all buttons and sections
@@ -16,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // Update URL hash without scrolling
             history.pushState(null, null, `#${targetSection}`);
+            
+            // Update the active state in the navigation
+            updateNavActiveState(targetSection);
         });
     });
 
@@ -30,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Activate the correct button
             sectionButtons.forEach(btn => btn.classList.remove("active"));
             document.querySelector(`.section-btn[data-section="${hash}"]`).classList.add("active");
+            
+            // Update the active state in the navigation
+            updateNavActiveState(hash);
         }
     }
     

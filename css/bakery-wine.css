@@ -1,9 +1,6 @@
 /* Bakery & Wine Bar specific styles */
 
-/* Page-specific background styling */
-body {
-    background: var(--background-color) var(--background-image);
-}
+
 
 /* Slideshow - using index.css as reference */
 .slideshow-container {
