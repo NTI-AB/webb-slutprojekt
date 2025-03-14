@@ -6,12 +6,16 @@
 }
 
 :root {
-    --primary-color: #800020; /* Burgundy */
-    --secondary-color: #E0E0E0; /* Silver */
-    --text-color: #4a0011; /* Darker wine red for better visibility on paper background */
+    --primary-color: #800020;
+    /* Burgundy */
+    --secondary-color: #E0E0E0;
+    /* Silver */
+    --text-color: #4a0011;
+    /* Darker wine red for better visibility on paper background */
     --background-color: #1a1a1a;
     --background-image: url('../img/paper-background.jpg');
-    --accent-color: #DAA520; /* Gold accent */
+    --accent-color: #DAA520;
+    /* Gold accent */
     --border-color: rgba(74, 0, 17, 0.2);
 }
 
@@ -25,7 +29,12 @@ body {
     background: var(--background-color) var(--background-image);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
 }
@@ -79,6 +88,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
@@ -86,26 +96,67 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Lora', serif;
+    padding: 5px 0;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+/* Enhanced hover effect with underline animation */
+nav ul li a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
 }
 
-nav ul li a.active {
-    border-bottom: 2px solid var(--secondary-color);
+nav ul li a:not(.btn):hover::after {
+    width: 100%;
 }
 
+nav ul li a:not(.btn):hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Active state styling */
+nav ul li a.active:not(.btn) {
+    color: var(--accent-color);
+}
+
+nav ul li a.active:not(.btn)::after {
+    width: 100%;
+    background-color: var(--accent-color);
+    height: 2px;
+}
+
+/* Reservation button styling */
 nav ul li a.btn {
     background-color: var(--accent-color);
     color: var(--primary-color);
     padding: 8px 16px;
     border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 nav ul li a.btn:hover {
     opacity: 0.9;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a.btn:active,
+nav ul li a.btn.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    transform: translateY(0);
 }
 
 /* Mobile Menu Toggle */
@@ -138,7 +189,8 @@ footer {
 
 /* Main Content Adjustment */
 main {
-    margin-top: 80px; /* Prevents content from being hidden under fixed nav */
+    margin-top: 80px;
+    /* Prevents content from being hidden under fixed nav */
 }
 
 /* Mobile Styles */
@@ -153,7 +205,8 @@ main {
         width: 100%;
         background-color: var(--primary-color);
         position: absolute;
-        top: 100%; /* Adjusted to appear below the nav */
+        top: 100%;
+        /* Adjusted to appear below the nav */
         left: 0;
         z-index: 1000;
     }
@@ -166,12 +219,13 @@ main {
         margin: 10px 0;
         text-align: center;
     }
-    
+
     .container {
         padding: 1rem;
     }
 
     main {
-        margin-top: 60px; /* Smaller margin for mobile */
+        margin-top: 60px;
+        /* Smaller margin for mobile */
     }
 }
