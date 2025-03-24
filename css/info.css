@@ -1,6 +1,3 @@
-
-
-
 /* Section Navigation */
 .section-nav {
     display: flex;
@@ -47,8 +44,13 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Info Cards */
@@ -100,7 +102,8 @@ address {
     margin-bottom: 2rem;
 }
 
-.map-container, .featured-image {
+.map-container,
+.featured-image {
     width: 100%;
     height: 300px;
     background-color: #f0f0f0;
@@ -109,7 +112,8 @@ address {
     overflow: hidden;
 }
 
-.map-placeholder, .image-placeholder {
+.map-placeholder,
+.image-placeholder {
     width: 100%;
     height: 100%;
     display: flex;
@@ -216,6 +220,63 @@ address {
 
 .policy-list li {
     margin-bottom: 0.8rem;
+}
+
+/* Reservation Success Popup */
+.reservation-success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s;
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.emoji-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    background-image: url('../img/no-background-checkmark.jpg');
+    /* Path to your masked emoji */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.popup-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.close-popup-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    transition: all 0.3s;
+}
+
+.close-popup-btn:hover {
+    background-color: #6b001b;
 }
 
 /* Mobile Styles - Page Specific */

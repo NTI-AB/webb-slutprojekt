@@ -22,6 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Section Navigation - similar to info.js
     const sectionButtons = document.querySelectorAll(".section-btn");
     const contentSections = document.querySelectorAll(".content-section");
+    const wineNavLink = document.getElementById("wine-nav-link");
+    const bakeryNavLink = document.getElementById("bakery-nav-link");
+
+    // Function to update nav active state
+    function updateNavActiveState(sectionId) {
+        // Remove active class from all nav links
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add active class to the corresponding nav link based on section
+        if (sectionId === "wine-bar") {
+            wineNavLink.classList.add('active');
+        } else if (sectionId === "bakery") {
+            bakeryNavLink.classList.add('active');
+        }
+    }
 
     sectionButtons.forEach(button => {
         button.addEventListener("click", function() {
@@ -36,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // Update URL hash without scrolling
             history.pushState(null, null, `#${targetSection}`);
+            
+            // Update the active state in the navigation
+            updateNavActiveState(targetSection);
         });
     });
 
@@ -53,12 +72,18 @@ document.addEventListener("DOMContentLoaded", function() {
             if (buttonToActivate) {
                 buttonToActivate.classList.add("active");
             }
+            
+            // Update the active state in the navigation
+            updateNavActiveState(hash);
         }
     }
     
     // Check hash when page loads
     if (window.location.hash) {
         handleHashChange();
+    } else {
+        // If no hash, default to wine-bar and update nav
+        updateNavActiveState("wine-bar");
     }
     
     // Listen for hash changes
@@ -69,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (viewWineListButton) {
         viewWineListButton.addEventListener("click", function(e) {
             e.preventDefault();
-        // Redirect to the menus page with the wine tab active
-        window.location.href = "menus.html#wine";
-    });
-}
+            // Redirect to the menus page with the wine tab active
+            window.location.href = "menus.html#wine";
+        });
+    }
 
     // Mobile Menu Toggle
     const navToggle = document.getElementById("nav-toggle");

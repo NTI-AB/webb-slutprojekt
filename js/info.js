@@ -87,7 +87,25 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             
             // Basic form validation would happen here
-            alert("Thank you! Your reservation request has been received. We will confirm shortly via email.");
+            
+            // Show custom popup instead of alert
+            const popup = document.createElement('div');
+            popup.className = 'reservation-success-popup';
+            popup.innerHTML = `
+                <div class="popup-content">
+                    <div class="emoji-container"></div>
+                    <h3>Reservation Received!</h3>
+                    <p>Thank you! Your reservation request has been received. We will confirm shortly via email.</p>
+                    <button class="close-popup-btn">Close</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+            
+            // Add close functionality to the popup
+            const closeBtn = popup.querySelector('.close-popup-btn');
+            closeBtn.addEventListener('click', function() {
+                document.body.removeChild(popup);
+            });
             
             // Optionally reset the form
             this.reset();
