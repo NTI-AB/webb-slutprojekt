@@ -1,46 +1,90 @@
 /* Menu Specific Styles - Optimized to remove redundancy with global.css */
 
-/* Menu Container & Layout */
+/* Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #800020;
+    /* Burgundy */
+    --secondary-color: #E0E0E0;
+    /* Silver */
+    --text-color: #4a0011;
+    /* Darker wine red for better visibility on paper background */
+    --background-color: #1a1a1a;
+    --background-image: url('../img/paper-background.jpg');
+    --accent-color: #DAA520;
+    /* Gold accent */
+    --border-color: rgba(74, 0, 17, 0.2);
+}
+
+/* Typography */
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    background: var(--background-color) var(--background-image);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Menu Container & Layout - Mobile First */
 .menu-container {
-    padding: 2rem;
-    max-width: 1200px;
+    padding: 1rem;
     margin: 0 auto;
     background: transparent;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Menu Navigation Buttons */
+/* Menu Navigation Buttons - Mobile First */
 .menu-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
     position: relative;
     z-index: 50;
-    justify-content: center;
-    /* Added to center the buttons horizontally */
 }
 
 .menu-btn {
     background: none;
     color: var(--text-color);
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
     cursor: pointer;
     border-radius: 0;
-    /* Remove border radius for straight lines */
     transition: all 0.3s;
     font-family: 'Lora', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
     border-top: 1px solid var(--primary-color);
-    /* Add top border */
     border-bottom: 1px solid var(--primary-color);
-    /* Add bottom border */
-    margin: 0 0.5rem;
-    /* Add some horizontal spacing between buttons */
+    margin: 0;
+    width: 100%;
 }
 
 .menu-btn.active {
@@ -53,13 +97,12 @@
     background: var(--primary-color);
     color: var(--secondary-color);
     opacity: 1;
-    /* Override the existing opacity */
 }
 
 /* Menu Content Display */
 .menu-content {
     display: none;
-    padding: 2rem;
+    padding: 1.5rem;
     background: transparent;
     border-radius: 8px;
     color: var(--text-color);
@@ -83,7 +126,7 @@
 
 /* Menu Item Styling */
 .menu-item {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -111,104 +154,30 @@
 .item-description {
     font-size: 0.95rem;
     line-height: 1.6;
-    max-width: 70ch;
 }
 
-/* Menu-specific mobile adjustments */
-@media (max-width: 768px) {
-    .menu-container {
-        padding: 1rem;
-    }
-
-    .menu-buttons {
-        flex-direction: column;
-    }
-
-    .menu-btn {
-        width: 100%;
-        margin: 0.25rem 0;
-        /* Adjust margin for mobile */
-    }
-}
-
-/* Reset & Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #800020;
-    /* Burgundy */
-    --secondary-color: #E0E0E0;
-    /* Silver */
-    --text-color: #4a0011;
-    /* Darker wine red for better visibility on paper background */
-    --background-color: #1a1a1a;
-    --background-image: url('../img/paper-background.jpg');
-    --accent-color: #DAA520;
-    /* Gold accent */
-    --border-color: rgba(74, 0, 17, 0.2);
-}
-
-/* Typography */
-body {
-    font-family: 'Lora', serif;
-    line-height: 1.6;
-}
-
-body {
-    background: var(--background-color) var(--background-image);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Body & General */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
+/* Container */
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-/* Navbar */
+/* Navbar - Mobile First */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     background-color: var(--primary-color);
-    padding: 15px 20px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 nav .logo {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--secondary-color);
     font-family: 'Playfair Display', serif;
@@ -216,12 +185,23 @@ nav .logo {
 
 nav ul {
     list-style: none;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul.active {
     display: flex;
 }
 
 nav ul li {
-    margin: 0 15px;
-    position: relative;
+    margin: 10px 0;
+    text-align: center;
 }
 
 nav ul li a {
@@ -275,6 +255,8 @@ nav ul li a.btn {
     border-radius: 4px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: inline-block;
+    margin: 5px auto;
 }
 
 nav ul li a.btn:hover {
@@ -292,9 +274,9 @@ nav ul li a.btn.active {
     transform: translateY(0);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle - Always visible in mobile first */
 #nav-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: var(--secondary-color);
@@ -316,49 +298,81 @@ footer {
     color: var(--secondary-color);
     text-align: center;
     padding: 15px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: 'Lora', serif;
 }
 
 /* Main Content Adjustment */
 main {
-    margin-top: 80px;
-    /* Prevents content from being hidden under fixed nav */
+    margin-top: 60px;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    #nav-toggle {
-        display: block;
+/* Tablet and Desktop Styles */
+@media (min-width: 769px) {
+    .menu-container {
+        padding: 2rem;
+        max-width: 1200px;
     }
 
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 100%;
-        /* Adjusted to appear below the nav */
-        left: 0;
-        z-index: 1000;
+    .menu-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        justify-content: center;
     }
 
-    #nav-menu.active {
-        display: flex;
+    .menu-btn {
+        width: auto;
+        padding: 1rem 2rem;
+        margin: 0 0.5rem;
     }
 
-    #nav-menu li {
-        margin: 10px 0;
-        text-align: center;
+    .menu-content {
+        padding: 2rem;
+    }
+
+    .menu-item {
+        margin: 2rem 0;
+    }
+
+    .item-description {
+        max-width: 70ch;
     }
 
     .container {
-        padding: 1rem;
+        max-width: 1200px;
+        padding: 2rem;
     }
 
+    /* Navbar Desktop */
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav .logo {
+        font-size: 24px;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+        text-align: left;
+    }
+
+    /* Main Content */
     main {
-        margin-top: 60px;
-        /* Smaller margin for mobile */
+        margin-top: 80px;
     }
 }

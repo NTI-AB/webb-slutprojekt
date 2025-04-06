@@ -1,11 +1,59 @@
 /* Bakery & Wine Bar specific styles */
 
+/* Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+:root {
+    --primary-color: #800020;
+    /* Burgundy */
+    --secondary-color: #E0E0E0;
+    /* Silver */
+    --text-color: #4a0011;
+    /* Darker wine red for better visibility on paper background */
+    --background-color: #1a1a1a;
+    --background-image: url('../img/paper-background.jpg');
+    --accent-color: #DAA520;
+    /* Gold accent */
+    --border-color: rgba(74, 0, 17, 0.2);
+}
 
-/* Slideshow - using index.css as reference */
+/* Typography */
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    background: var(--background-color) var(--background-image);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Slideshow - Mobile First */
 .slideshow-container {
     position: relative;
-    height: 80vh;
+    height: 60vh;
     overflow: hidden;
 }
 
@@ -27,22 +75,21 @@
     object-fit: cover;
 }
 
-/* Section Navigation - styled like info.css */
+/* Section Navigation - Mobile First */
 .section-nav {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     background-color: rgba(128, 0, 32, 0.1);
     padding: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
 .section-btn {
     background: none;
     color: var(--text-color);
     border: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s;
@@ -50,6 +97,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 .section-btn.active {
@@ -82,46 +130,45 @@
     }
 }
 
-/* Feature Sections */
+/* Feature Sections - Mobile First */
 .section-content {
-    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .section-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
 .tagline {
     font-style: italic;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
     color: var(--accent-color);
 }
 
 .description {
-    margin-bottom: 2rem;
-    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .description p {
     margin-bottom: 1rem;
 }
 
-/* Details Section */
+/* Details Section - Mobile First */
 .details {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .detail-item {
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
     padding: 1.5rem;
     background: rgba(128, 0, 32, 0.1);
     border-radius: 6px;
@@ -131,7 +178,7 @@
     font-family: 'Playfair Display', serif;
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .detail-item p {
@@ -143,7 +190,7 @@
     padding: 1rem;
     background: rgba(218, 165, 32, 0.1);
     border-left: 4px solid var(--accent-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Button Styling */
@@ -166,31 +213,29 @@
     text-decoration: none;
 }
 
-/* Testimonials Section */
+/* Testimonials Section - Mobile First */
 .testimonials {
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
 .testimonials h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
 }
 
 .testimonial-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .testimonial {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    padding: 2rem;
+    width: 100%;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
     position: relative;
@@ -201,7 +246,7 @@
     position: absolute;
     top: 0;
     left: 10px;
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--accent-color);
     opacity: 0.2;
     line-height: 1;
@@ -219,116 +264,28 @@
     color: var(--accent-color);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .slideshow-container {
-        height: 60vh;
-    }
-
-    .section-nav {
-        flex-direction: column;
-    }
-
-    .section-btn {
-        width: 100%;
-    }
-
-    .section-content h2 {
-        font-size: 2rem;
-    }
-
-    .details {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .detail-item {
-        min-width: auto;
-    }
-
-    .testimonial {
-        min-width: 100%;
-    }
-}
-
-/* Reset & Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #800020;
-    /* Burgundy */
-    --secondary-color: #E0E0E0;
-    /* Silver */
-    --text-color: #4a0011;
-    /* Darker wine red for better visibility on paper background */
-    --background-color: #1a1a1a;
-    --background-image: url('../img/paper-background.jpg');
-    --accent-color: #DAA520;
-    /* Gold accent */
-    --border-color: rgba(74, 0, 17, 0.2);
-}
-
-/* Typography */
-body {
-    font-family: 'Lora', serif;
-    line-height: 1.6;
-}
-
-body {
-    background: var(--background-color) var(--background-image);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Body & General */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
+/* Container */
 .container {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-/* Navbar */
+/* Navbar - Mobile First */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     background-color: var(--primary-color);
-    padding: 15px 20px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 nav .logo {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--secondary-color);
     font-family: 'Playfair Display', serif;
@@ -336,12 +293,23 @@ nav .logo {
 
 nav ul {
     list-style: none;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul.active {
     display: flex;
 }
 
 nav ul li {
-    margin: 0 15px;
-    position: relative;
+    margin: 10px 0;
+    text-align: center;
 }
 
 nav ul li a {
@@ -395,6 +363,8 @@ nav ul li a.btn {
     border-radius: 4px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: inline-block;
+    margin: 5px auto;
 }
 
 nav ul li a.btn:hover {
@@ -412,9 +382,9 @@ nav ul li a.btn.active {
     transform: translateY(0);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle - Always visible in mobile first */
 #nav-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: var(--secondary-color);
@@ -436,49 +406,125 @@ footer {
     color: var(--secondary-color);
     text-align: center;
     padding: 15px;
-    margin-top: 50px;
+    margin-top: 30px;
     font-family: 'Lora', serif;
 }
 
 /* Main Content Adjustment */
 main {
-    margin-top: 80px;
-    /* Prevents content from being hidden under fixed nav */
+    margin-top: 60px;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    #nav-toggle {
-        display: block;
+/* Tablet and Desktop Styles */
+@media (min-width: 769px) {
+    .slideshow-container {
+        height: 80vh;
     }
 
-    #nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 100%;
-        /* Adjusted to appear below the nav */
-        left: 0;
-        z-index: 1000;
+    .section-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
     }
 
-    #nav-menu.active {
-        display: flex;
+    .section-btn {
+        width: auto;
+        padding: 0.8rem 1.5rem;
     }
 
-    #nav-menu li {
-        margin: 10px 0;
-        text-align: center;
+    .section-content {
+        max-width: 900px;
+    }
+
+    .section-content h2 {
+        font-size: 2.4rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .description {
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    .details {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .detail-item {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .testimonials {
+        padding: 3rem 0;
+    }
+
+    .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .testimonial {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        padding: 2rem;
+    }
+
+    .testimonial:before {
+        font-size: 5rem;
     }
 
     .container {
-        padding: 1rem;
+        max-width: 1200px;
+        padding: 2rem;
     }
 
+    /* Navbar Desktop */
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav .logo {
+        font-size: 24px;
+    }
+
+    #nav-toggle {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+        text-align: left;
+    }
+
+    /* Main Content */
     main {
-        margin-top: 60px;
-        /* Smaller margin for mobile */
+        margin-top: 80px;
     }
 }
